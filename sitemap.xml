@@ -28,11 +28,6 @@
   </url>
   
   <url>
-    <loc>http://snegovikufa.github.io/post/lala/</loc>
-    <lastmod>2015-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://snegovikufa.github.io/about/</loc>
     <lastmod>2015-08-18T00:00:00+00:00</lastmod>
   </url>
@@ -43,13 +38,68 @@
   </url>
   
   <url>
+    <loc>http://snegovikufa.github.io/post/qt_addin/</loc>
+    <lastmod>2015-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://snegovikufa.github.io/project/teamwords/</loc>
     <lastmod>2015-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>http://snegovikufa.github.io/post/p_invoke_error/</loc>
+    <lastmod>2015-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/gitlab_unicorn/</loc>
+    <lastmod>2015-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://snegovikufa.github.io/post/omnibus_gitlab/</loc>
     <lastmod>2015-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/select_chart/</loc>
+    <lastmod>2014-12-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/wpf_locale/</loc>
+    <lastmod>2014-12-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/ssh_scp_ignores_config/</loc>
+    <lastmod>2014-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/telerik_enum/</loc>
+    <lastmod>2014-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/windows_ssh/</loc>
+    <lastmod>2014-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/kendo_null/</loc>
+    <lastmod>2014-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/far_manager/</loc>
+    <lastmod>2014-02-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://snegovikufa.github.io/post/ubuntu_enable/</loc>
+    <lastmod>2013-05-15T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

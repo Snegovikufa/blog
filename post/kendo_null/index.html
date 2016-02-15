@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>How to set Omnibus Gitlab Sidekiq workers count</title>
+        <title>Kendo UI null parameters</title>
         
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -70,14 +70,14 @@
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
         
         <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('/images/default.jpg'); background-color:#4CAF50;">
-            <h3 >How To Set Omnibus Gitlab Sidekiq Workers Count</h3>
+            <h3 >Kendo UI Null Parameters</h3>
         </div>
           
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
             <div class="minilogo" style="background-image: url('/images/avatar.jpg');"></div>
             <div>
                 <strong>Rustam Safin</strong>
-                <span>Feb 18, 2015</span>
+                <span>May 11, 2014</span>
             </div>
             
             <div class="section-spacer"></div>
@@ -85,34 +85,52 @@
         </div>
             
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-            <p>Stop your gitlab instance</p>
+            <p>If you use Kendo UI MVC helpers, then you should name your widget exactly as parameters names in your controller&rsquo;s actions.</p>
 
-<pre><code>sudo gitlab-ctl stop
+<p>For example, we create some upload widget:</p>
+
+<pre><code>&lt;div&gt;
+@(Html.Kendo().Upload()
+        .Name(&quot;attachments&quot;)
+        .Async(async =&gt; async
+            .Save(&quot;Save&quot;, &quot;Home&quot;)
+            .AutoUpload(true)
+        )
+)
+&lt;/div&gt;
 </code></pre>
 
-<p>Edit file <code>/opt/gitlab/sv/sidekiq/run</code></p>
+<p>As you can see, we name upload widget as <strong>&ldquo;attachments&rdquo;</strong>. Now, we create Save action in our Home controller.</p>
 
-<p>Set your workers count:</p>
+<pre><code>public ActionResult Save(IEnumerable&lt;HttpPostedFileBase&gt; files)
+{
+    foreach (var file in files)
+    {
+        var fileName = Path.GetFileName(file.FileName);
+        var destinationPath = Path.Combine(Server.MapPath(&quot;~/App_Data&quot;), fileName);
 
-<pre><code>#!/bin/sh
-cd /var/opt/gitlab/gitlab-rails/working
-exec 2&gt;&amp;1
-exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
-  -U git -u git \
-  /opt/gitlab/embedded/bin/bundle exec sidekiq \
-    # ADD THE LINE BELOW AND SET NUMBER OF WORKERS
-    -c 3 \  # &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SET NUMBER OF WORKERS HERE
-    -q post_receive \
-    -q mailer \
-    -q system_hook \
-    -q project_web_hook \
-    -q gitlab_shell \
-    -q common \
-    -q default \
-    -e production \
-    -r /opt/gitlab/embedded/service/gitlab-rails \
-    -t 4
+        file.SaveAs(destinationPath);
+    }
+    return Content(&quot;&quot;);
+}
 </code></pre>
+
+<p>If you set breakpoint into Save action, you can see, that <strong>&ldquo;files&rdquo;</strong> parameter is null. To fix that issue, we rename <strong>&ldquo;files&rdquo;</strong> parameter as name of out upload widget, i.e. <strong>&ldquo;attachments&rdquo;</strong>:</p>
+
+<pre><code>public ActionResult Save(IEnumerable&lt;HttpPostedFileBase&gt; attachments)
+{
+    foreach (var file in attachments)
+    {
+        var fileName = Path.GetFileName(file.FileName);
+        var destinationPath = Path.Combine(Server.MapPath(&quot;~/App_Data&quot;), fileName);
+
+        file.SaveAs(destinationPath);
+    }
+    return Content(&quot;&quot;);
+}
+</code></pre>
+
+<p>And that will work as you expect! Attachments are not null!</p>
 
         </div>
         
@@ -124,7 +142,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
 
     <nav class="hugo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     
-    <a href="/post/select_chart/" class="hugo-nav__button">
+    <a href="/post/far_manager/" class="hugo-nav__button">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-back"></i>
         </button>
@@ -132,7 +150,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
     </a>
     <div class="section-spacer"></div>
     
-    <a href="/post/gitlab_unicorn/" class="hugo-nav__button">Newer
+    <a href="/post/windows_ssh/" class="hugo-nav__button">Newer
       <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-forward"></i>
       </button>

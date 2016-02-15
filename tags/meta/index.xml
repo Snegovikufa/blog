@@ -156,56 +156,6 @@ Optimization results charts.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Awesome Post</title>
-      <link>http://snegovikufa.github.io/post/lala/</link>
-      <pubDate>Wed, 19 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://snegovikufa.github.io/post/lala/</guid>
-      <description>
-
-&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book.  It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged. It was popularised in
-the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-and more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.&lt;/p&gt;
-
-&lt;h3 id=&#34;lorem-ipsum:3691010a2008368f15c25ce499de1def&#34;&gt;Lorem Ipsum&lt;/h3&gt;
-
-&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged. It was popularised in
-the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-and more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.&lt;/p&gt;
-
-&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged. It was popularised in
-the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-and more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.&lt;/p&gt;
-
-&lt;h3 id=&#34;lorem-ipsum-1:3691010a2008368f15c25ce499de1def&#34;&gt;Lorem Ipsum&lt;/h3&gt;
-
-&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and scrambled it to make a type
-specimen book. It has survived not only five centuries, but also the leap into
-electronic typesetting, remaining essentially unchanged. It was popularised in
-the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-and more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Connector</title>
       <link>http://snegovikufa.github.io/project/connector/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
@@ -254,6 +204,17 @@ Devices map&lt;/p&gt;
     </item>
     
     <item>
+      <title>Where download Qt Visual Studio add-in?</title>
+      <link>http://snegovikufa.github.io/post/qt_addin/</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/qt_addin/</guid>
+      <description>&lt;p&gt;I have not found this link on official pages.
+You can get add-in here: &lt;a href=&#34;http://download.qt-project.org/official_releases/vsaddin/&#34;&gt;http://download.qt-project.org/official_releases/vsaddin/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>TeamWords</title>
       <link>http://snegovikufa.github.io/project/teamwords/</link>
       <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
@@ -281,6 +242,50 @@ Main app view&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/teamwords_notification.jpg&#34; alt=&#34;&#34; /&gt;
 Notification example&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Исправление ошибки при использовании P/Invoke</title>
+      <link>http://snegovikufa.github.io/post/p_invoke_error/</link>
+      <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/p_invoke_error/</guid>
+      <description>&lt;p&gt;Чтобы исправить вот эту ошибку:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;System.BadImageFormatException: Была сделана попытка загрузить программу, имеющую неверный формат.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Нужно в свойствах проекта Visual Studio проверить платформу сборки x86.Properties - Build - Platform Target - x86:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/pinvoke_settings.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to set Omnibus Gitlab unicorn workers count</title>
+      <link>http://snegovikufa.github.io/post/gitlab_unicorn/</link>
+      <pubDate>Thu, 19 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/gitlab_unicorn/</guid>
+      <description>&lt;p&gt;Stop your gitlab instance&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gitlab-ctl stop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Edit file &lt;code&gt;/etc/gitlab/gitlab.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Uncomment and set unicorn workers count&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+##################
+# GitLab Unicorn #
+##################
+## Tweak unicorn settings.
+
+# unicorn[&#39;worker_timeout&#39;] = 60
+unicorn[&#39;worker_processes&#39;] = 1
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -318,6 +323,228 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
     -r /opt/gitlab/embedded/service/gitlab-rails \
     -t 4
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Select right chart to represent data</title>
+      <link>http://snegovikufa.github.io/post/select_chart/</link>
+      <pubDate>Thu, 25 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/select_chart/</guid>
+      <description>&lt;p&gt;Иногда возникает проблема выбора каким же графиком отобразить данные. Надеюсь вот эти картинки смогут помочь.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/chart_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/chart_2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WPF set application-wide Culture, NumberFormat, Decimal separator</title>
+      <link>http://snegovikufa.github.io/post/wpf_locale/</link>
+      <pubDate>Thu, 25 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/wpf_locale/</guid>
+      <description>&lt;p&gt;WPF by default uses built-in culture settings that come with .Net Framework libraries.&lt;/p&gt;
+
+&lt;p&gt;For example, for ru-RU culture &lt;em&gt;double&lt;/em&gt; must look like 123456,789, for en-US like 123456.789, so if you don&amp;rsquo;t want your users to be angry, you must set your application culture at startup. However, our users want to see &lt;em&gt;doubles&lt;/em&gt; like in en-US culture, e.g. 123456.789&lt;/p&gt;
+
+&lt;p&gt;There are two ways to do this:&lt;/p&gt;
+
+&lt;p&gt;1. Modify current culture settings. And that is awful
+   a. Not all controls support such behaviour
+   b. This code breaks all your hopes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;XmlLanguage xmlLanguage = XmlLanguage.GetLanguage(&amp;quot;ru-RU&amp;quot;);
+FrameworkElement.LanguageProperty.OverrideMetadata(typeof (FrameworkElement),
+                                                   new FrameworkPropertyMetadata(xmlLanguage));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;span style=&#34;color: #333333; font-size: 12px;&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color: #990000;&#34;&gt;XmlLanguage ignore all modifications to Thread.CurrentThread.CurrentCulture&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;2. Register your own culture (&lt;strong&gt;works if your users can get administator rights&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;private const string CultureName = &amp;quot;ru-MIT&amp;quot;;
+private const string cultureEnglishName = &amp;quot;ru-MIT&amp;quot;;
+private const string cultureNativeName = &amp;quot;Русский (Мит)&amp;quot;;
+
+private static void Main(string[] args)
+{
+    CreateAndRegisterOwnCulture();
+}
+
+private static void CreateAndRegisterOwnCulture()
+{
+    var ownCulture = new CultureAndRegionInfoBuilder(CultureName, CultureAndRegionModifiers.None);
+
+    var parentCulture = new CultureInfo(&amp;quot;ru-RU&amp;quot;);
+    var region = new RegionInfo(&amp;quot;RU&amp;quot;);
+    ownCulture.LoadDataFromCultureInfo(parentCulture);
+    ownCulture.LoadDataFromRegionInfo(region);
+
+    ownCulture.CultureEnglishName = cultureEnglishName;
+    ownCulture.CultureNativeName = cultureNativeName;
+
+    var nfi = (NumberFormatInfo) parentCulture.NumberFormat.Clone();
+    nfi.NumberDecimalSeparator = &amp;quot;.&amp;quot;;
+    nfi.NumberGroupSeparator = &amp;quot; &amp;quot;;
+    nfi.CurrencyDecimalSeparator = &amp;quot;.&amp;quot;;
+    nfi.CurrencyGroupSeparator = &amp;quot; &amp;quot;;
+
+    ownCulture.NumberFormat = nfi;
+    ownCulture.Parent = parentCulture;
+
+
+    if (SystemHasMitCulture())
+    {
+        Console.WriteLine(&amp;quot;&amp;gt;&amp;gt;&amp;gt; System already has own culture :)&amp;quot;);
+        return;
+    }
+
+    // Admin rights are needed here
+    // CultureAndRegionInfoBuilder.Unregister(CultureName);
+
+    try
+    {
+        // Admin rights are needed here
+        Console.WriteLine(&amp;quot;&amp;gt;&amp;gt;&amp;gt; Trying to set own culture&amp;quot;);
+        ownCulture.Register();
+        Console.WriteLine(&amp;quot;&amp;gt;&amp;gt;&amp;gt; Own culture set successfully&amp;quot;);
+    }
+    catch (UnauthorizedAccessException)
+    {
+        Console.WriteLine(&amp;quot;&amp;gt;&amp;gt;&amp;gt; Set own culture failed :(&amp;quot;);
+    }
+    catch (InvalidOperationException)
+    {
+        Console.WriteLine(&amp;quot;&amp;gt;&amp;gt;&amp;gt; Culture is already registered :)&amp;quot;);
+    }
+}
+
+private static bool SystemHasMitCulture()
+{
+    return CultureInfo.GetCultures(CultureTypes.UserCustomCulture).Any(ci =&amp;gt; (ci.Name == CultureName));
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The same code on Github Gist: &lt;a href=&#34;https://gist.github.com/Snegovikufa/f051959dd105b7e56405&#34;&gt;https://gist.github.com/Snegovikufa/f051959dd105b7e56405&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SSH / SCP ignores sshconfig in command line</title>
+      <link>http://snegovikufa.github.io/post/ssh_scp_ignores_config/</link>
+      <pubDate>Tue, 11 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/ssh_scp_ignores_config/</guid>
+      <description>&lt;p&gt;If you setup git and then try to use ssh from SYSTEM account, then you will get authentication errors. To solve that issues you need to add HOME system environment variable and reboot your machine.&lt;/p&gt;
+
+&lt;p&gt;So your system PATH will look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/path.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Telerik RadComboBox bind to Enum</title>
+      <link>http://snegovikufa.github.io/post/telerik_enum/</link>
+      <pubDate>Wed, 15 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/telerik_enum/</guid>
+      <description>
+
+&lt;p&gt;The result you want to see:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/telerik_enum.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;testcombobox-xaml:0999d164b97bc3fca29f43bf9bd98828&#34;&gt;TestCombobox.xaml&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Window x:Class=&amp;quot;TelerikWpfApp1.TestComboBox&amp;quot;
+        xmlns=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&amp;quot;
+        xmlns:x=&amp;quot;http://schemas.microsoft.com/winfx/2006/xaml&amp;quot;
+        xmlns:telerik=&amp;quot;http://schemas.telerik.com/2008/xaml/presentation&amp;quot;
+        xmlns:telerikWpfApp1=&amp;quot;clr-namespace:TelerikWpfApp1&amp;quot;
+        Title=&amp;quot;TestComboBox&amp;quot; Height=&amp;quot;300&amp;quot; Width=&amp;quot;300&amp;quot;&amp;gt;
+    &amp;lt;Window.Resources&amp;gt;
+        &amp;lt;telerik:EnumDataSource EnumType=&amp;quot;telerikWpfApp1:PlayerType&amp;quot;
+                                x:Key=&amp;quot;enumDataSource&amp;quot; /&amp;gt;
+    &amp;lt;/Window.Resources&amp;gt;
+    &amp;lt;Grid&amp;gt;
+        &amp;lt;telerik:RadComboBox SelectedValue=&amp;quot;{Binding Path=PlayerType}&amp;quot;
+                             ItemsSource=&amp;quot;{Binding Source={StaticResource enumDataSource}}&amp;quot;
+                             DisplayMemberPath=&amp;quot;DisplayName&amp;quot;
+                             SelectedValuePath=&amp;quot;Value&amp;quot; /&amp;gt;
+    &amp;lt;/Grid&amp;gt;
+&amp;lt;/Window&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;testcombobox-xaml-cs:0999d164b97bc3fca29f43bf9bd98828&#34;&gt;TestCombobox.xaml.cs&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows;
+namespace TelerikWpfApp1
+{
+    public partial class TestComboBox
+    {
+        public TestComboBox()
+        {
+            InitializeComponent();
+            this.DataContext = new Player()
+            {
+                PlayerType = PlayerType.Defender,
+            };
+        }
+    }
+    public enum PlayerType
+    {
+        [Description(&amp;quot;The forward&amp;quot;)]
+        Forward,
+        [Description(&amp;quot;The defender&amp;quot;)]
+        Defender,
+        [Description(&amp;quot;The goal keeper&amp;quot;)]
+        GoalKeeper,
+    }
+    public class Player
+    {
+        public PlayerType PlayerType { get; set; }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows, Git bash &amp; Putty</title>
+      <link>http://snegovikufa.github.io/post/windows_ssh/</link>
+      <pubDate>Wed, 03 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/windows_ssh/</guid>
+      <description>&lt;p&gt;Надоело постоянно вводить пароли в git bash для пулов/пушей&lt;/p&gt;
+
+&lt;p&gt;Рецепт для Windows:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Установить Git, Putty + Plink + PuttyGen + Pagent (с официального сайта можно скачать установщик)&lt;/li&gt;
+&lt;li&gt;Сгенерировать ключи в PuttyGen в формате .ppk, закинуть их в %HOME%.ssh&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Создать ярлык для запуска Pagent&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;C:\Program Files (x86)\PuTTY\pageant.exe&amp;rdquo; &amp;ldquo;C:\Users\snegovik.ssh\work_rsa.ppk&amp;rdquo; &amp;ldquo;C:\Users\snegovik.ssh\github_rsa.ppk&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Запустить Pagent с помощью ярлыка, ввести пароли для ключей&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Запустить Putty, подключиться один раз ко всем серверам, можно ничего не вводить, просто принять fingerprint&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Установить переменную окружения (советую Rapid Environment Editor)&lt;/p&gt;
+
+&lt;p&gt;GIT_SSH=C:\Program Files (x86)\PuTTY\plink.exe&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Запустить Git bash и радоваться&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     

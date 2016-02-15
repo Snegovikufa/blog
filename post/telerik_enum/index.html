@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>How to set Omnibus Gitlab Sidekiq workers count</title>
+        <title>Telerik RadComboBox bind to Enum</title>
         
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -70,14 +70,14 @@
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
         
         <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('/images/default.jpg'); background-color:#4CAF50;">
-            <h3 >How To Set Omnibus Gitlab Sidekiq Workers Count</h3>
+            <h3 >Telerik RadComboBox Bind To Enum</h3>
         </div>
           
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
             <div class="minilogo" style="background-image: url('/images/avatar.jpg');"></div>
             <div>
                 <strong>Rustam Safin</strong>
-                <span>Feb 18, 2015</span>
+                <span>Oct 15, 2014</span>
             </div>
             
             <div class="section-spacer"></div>
@@ -85,33 +85,67 @@
         </div>
             
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-            <p>Stop your gitlab instance</p>
+            
 
-<pre><code>sudo gitlab-ctl stop
+<p>The result you want to see:</p>
+
+<p><img src="/images/telerik_enum.png" alt="" /></p>
+
+<h3 id="testcombobox-xaml:0999d164b97bc3fca29f43bf9bd98828">TestCombobox.xaml</h3>
+
+<pre><code>&lt;Window x:Class=&quot;TelerikWpfApp1.TestComboBox&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:telerik=&quot;http://schemas.telerik.com/2008/xaml/presentation&quot;
+        xmlns:telerikWpfApp1=&quot;clr-namespace:TelerikWpfApp1&quot;
+        Title=&quot;TestComboBox&quot; Height=&quot;300&quot; Width=&quot;300&quot;&gt;
+    &lt;Window.Resources&gt;
+        &lt;telerik:EnumDataSource EnumType=&quot;telerikWpfApp1:PlayerType&quot;
+                                x:Key=&quot;enumDataSource&quot; /&gt;
+    &lt;/Window.Resources&gt;
+    &lt;Grid&gt;
+        &lt;telerik:RadComboBox SelectedValue=&quot;{Binding Path=PlayerType}&quot;
+                             ItemsSource=&quot;{Binding Source={StaticResource enumDataSource}}&quot;
+                             DisplayMemberPath=&quot;DisplayName&quot;
+                             SelectedValuePath=&quot;Value&quot; /&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
 </code></pre>
 
-<p>Edit file <code>/opt/gitlab/sv/sidekiq/run</code></p>
+<h3 id="testcombobox-xaml-cs:0999d164b97bc3fca29f43bf9bd98828">TestCombobox.xaml.cs</h3>
 
-<p>Set your workers count:</p>
-
-<pre><code>#!/bin/sh
-cd /var/opt/gitlab/gitlab-rails/working
-exec 2&gt;&amp;1
-exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
-  -U git -u git \
-  /opt/gitlab/embedded/bin/bundle exec sidekiq \
-    # ADD THE LINE BELOW AND SET NUMBER OF WORKERS
-    -c 3 \  # &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SET NUMBER OF WORKERS HERE
-    -q post_receive \
-    -q mailer \
-    -q system_hook \
-    -q project_web_hook \
-    -q gitlab_shell \
-    -q common \
-    -q default \
-    -e production \
-    -r /opt/gitlab/embedded/service/gitlab-rails \
-    -t 4
+<pre><code>using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows;
+namespace TelerikWpfApp1
+{
+    public partial class TestComboBox
+    {
+        public TestComboBox()
+        {
+            InitializeComponent();
+            this.DataContext = new Player()
+            {
+                PlayerType = PlayerType.Defender,
+            };
+        }
+    }
+    public enum PlayerType
+    {
+        [Description(&quot;The forward&quot;)]
+        Forward,
+        [Description(&quot;The defender&quot;)]
+        Defender,
+        [Description(&quot;The goal keeper&quot;)]
+        GoalKeeper,
+    }
+    public class Player
+    {
+        public PlayerType PlayerType { get; set; }
+    }
+}
 </code></pre>
 
         </div>
@@ -124,7 +158,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
 
     <nav class="hugo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     
-    <a href="/post/select_chart/" class="hugo-nav__button">
+    <a href="/post/windows_ssh/" class="hugo-nav__button">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-back"></i>
         </button>
@@ -132,7 +166,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
     </a>
     <div class="section-spacer"></div>
     
-    <a href="/post/gitlab_unicorn/" class="hugo-nav__button">Newer
+    <a href="/post/ssh_scp_ignores_config/" class="hugo-nav__button">Newer
       <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-forward"></i>
       </button>

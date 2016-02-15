@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>How to set Omnibus Gitlab Sidekiq workers count</title>
+        <title>WPF set application-wide Culture, NumberFormat, Decimal separator</title>
         
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -70,14 +70,14 @@
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
         
         <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('/images/default.jpg'); background-color:#4CAF50;">
-            <h3 >How To Set Omnibus Gitlab Sidekiq Workers Count</h3>
+            <h3 >WPF Set Application-Wide Culture, NumberFormat, Decimal Separator</h3>
         </div>
           
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
             <div class="minilogo" style="background-image: url('/images/avatar.jpg');"></div>
             <div>
                 <strong>Rustam Safin</strong>
-                <span>Feb 18, 2015</span>
+                <span>Dec 25, 2014</span>
             </div>
             
             <div class="section-spacer"></div>
@@ -85,34 +85,89 @@
         </div>
             
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-            <p>Stop your gitlab instance</p>
+            <p>WPF by default uses built-in culture settings that come with .Net Framework libraries.</p>
 
-<pre><code>sudo gitlab-ctl stop
+<p>For example, for ru-RU culture <em>double</em> must look like 123456,789, for en-US like 123456.789, so if you don&rsquo;t want your users to be angry, you must set your application culture at startup. However, our users want to see <em>doubles</em> like in en-US culture, e.g. 123456.789</p>
+
+<p>There are two ways to do this:</p>
+
+<p>1. Modify current culture settings. And that is awful
+   a. Not all controls support such behaviour
+   b. This code breaks all your hopes:</p>
+
+<pre><code>XmlLanguage xmlLanguage = XmlLanguage.GetLanguage(&quot;ru-RU&quot;);
+FrameworkElement.LanguageProperty.OverrideMetadata(typeof (FrameworkElement),
+                                                   new FrameworkPropertyMetadata(xmlLanguage));
 </code></pre>
 
-<p>Edit file <code>/opt/gitlab/sv/sidekiq/run</code></p>
+<p><span style="color: #333333; font-size: 12px;"></span> <span style="color: #990000;">XmlLanguage ignore all modifications to Thread.CurrentThread.CurrentCulture</span></p>
 
-<p>Set your workers count:</p>
+<p>2. Register your own culture (<strong>works if your users can get administator rights</strong>).</p>
 
-<pre><code>#!/bin/sh
-cd /var/opt/gitlab/gitlab-rails/working
-exec 2&gt;&amp;1
-exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
-  -U git -u git \
-  /opt/gitlab/embedded/bin/bundle exec sidekiq \
-    # ADD THE LINE BELOW AND SET NUMBER OF WORKERS
-    -c 3 \  # &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SET NUMBER OF WORKERS HERE
-    -q post_receive \
-    -q mailer \
-    -q system_hook \
-    -q project_web_hook \
-    -q gitlab_shell \
-    -q common \
-    -q default \
-    -e production \
-    -r /opt/gitlab/embedded/service/gitlab-rails \
-    -t 4
+<pre><code>private const string CultureName = &quot;ru-MIT&quot;;
+private const string cultureEnglishName = &quot;ru-MIT&quot;;
+private const string cultureNativeName = &quot;Русский (Мит)&quot;;
+
+private static void Main(string[] args)
+{
+    CreateAndRegisterOwnCulture();
+}
+
+private static void CreateAndRegisterOwnCulture()
+{
+    var ownCulture = new CultureAndRegionInfoBuilder(CultureName, CultureAndRegionModifiers.None);
+
+    var parentCulture = new CultureInfo(&quot;ru-RU&quot;);
+    var region = new RegionInfo(&quot;RU&quot;);
+    ownCulture.LoadDataFromCultureInfo(parentCulture);
+    ownCulture.LoadDataFromRegionInfo(region);
+
+    ownCulture.CultureEnglishName = cultureEnglishName;
+    ownCulture.CultureNativeName = cultureNativeName;
+
+    var nfi = (NumberFormatInfo) parentCulture.NumberFormat.Clone();
+    nfi.NumberDecimalSeparator = &quot;.&quot;;
+    nfi.NumberGroupSeparator = &quot; &quot;;
+    nfi.CurrencyDecimalSeparator = &quot;.&quot;;
+    nfi.CurrencyGroupSeparator = &quot; &quot;;
+
+    ownCulture.NumberFormat = nfi;
+    ownCulture.Parent = parentCulture;
+
+
+    if (SystemHasMitCulture())
+    {
+        Console.WriteLine(&quot;&gt;&gt;&gt; System already has own culture :)&quot;);
+        return;
+    }
+
+    // Admin rights are needed here
+    // CultureAndRegionInfoBuilder.Unregister(CultureName);
+
+    try
+    {
+        // Admin rights are needed here
+        Console.WriteLine(&quot;&gt;&gt;&gt; Trying to set own culture&quot;);
+        ownCulture.Register();
+        Console.WriteLine(&quot;&gt;&gt;&gt; Own culture set successfully&quot;);
+    }
+    catch (UnauthorizedAccessException)
+    {
+        Console.WriteLine(&quot;&gt;&gt;&gt; Set own culture failed :(&quot;);
+    }
+    catch (InvalidOperationException)
+    {
+        Console.WriteLine(&quot;&gt;&gt;&gt; Culture is already registered :)&quot;);
+    }
+}
+
+private static bool SystemHasMitCulture()
+{
+    return CultureInfo.GetCultures(CultureTypes.UserCustomCulture).Any(ci =&gt; (ci.Name == CultureName));
+}
 </code></pre>
+
+<p>The same code on Github Gist: <a href="https://gist.github.com/Snegovikufa/f051959dd105b7e56405">https://gist.github.com/Snegovikufa/f051959dd105b7e56405</a></div></p>
 
         </div>
         
@@ -124,7 +179,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
 
     <nav class="hugo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     
-    <a href="/post/select_chart/" class="hugo-nav__button">
+    <a href="/post/ssh_scp_ignores_config/" class="hugo-nav__button">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-back"></i>
         </button>
@@ -132,7 +187,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
     </a>
     <div class="section-spacer"></div>
     
-    <a href="/post/gitlab_unicorn/" class="hugo-nav__button">Newer
+    <a href="/post/select_chart/" class="hugo-nav__button">Newer
       <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-forward"></i>
       </button>

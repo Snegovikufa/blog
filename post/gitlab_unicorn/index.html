@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>How to set Omnibus Gitlab Sidekiq workers count</title>
+        <title>How to set Omnibus Gitlab unicorn workers count</title>
         
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -70,14 +70,14 @@
     <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
         
         <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('/images/default.jpg'); background-color:#4CAF50;">
-            <h3 >How To Set Omnibus Gitlab Sidekiq Workers Count</h3>
+            <h3 >How To Set Omnibus Gitlab Unicorn Workers Count</h3>
         </div>
           
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
             <div class="minilogo" style="background-image: url('/images/avatar.jpg');"></div>
             <div>
                 <strong>Rustam Safin</strong>
-                <span>Feb 18, 2015</span>
+                <span>Feb 19, 2015</span>
             </div>
             
             <div class="section-spacer"></div>
@@ -90,28 +90,18 @@
 <pre><code>sudo gitlab-ctl stop
 </code></pre>
 
-<p>Edit file <code>/opt/gitlab/sv/sidekiq/run</code></p>
+<p>Edit file <code>/etc/gitlab/gitlab.rb</code></p>
 
-<p>Set your workers count:</p>
+<p>Uncomment and set unicorn workers count</p>
 
 <pre><code>#!/bin/sh
-cd /var/opt/gitlab/gitlab-rails/working
-exec 2&gt;&amp;1
-exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
-  -U git -u git \
-  /opt/gitlab/embedded/bin/bundle exec sidekiq \
-    # ADD THE LINE BELOW AND SET NUMBER OF WORKERS
-    -c 3 \  # &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SET NUMBER OF WORKERS HERE
-    -q post_receive \
-    -q mailer \
-    -q system_hook \
-    -q project_web_hook \
-    -q gitlab_shell \
-    -q common \
-    -q default \
-    -e production \
-    -r /opt/gitlab/embedded/service/gitlab-rails \
-    -t 4
+##################
+# GitLab Unicorn #
+##################
+## Tweak unicorn settings.
+
+# unicorn['worker_timeout'] = 60
+unicorn['worker_processes'] = 1
 </code></pre>
 
         </div>
@@ -124,7 +114,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
 
     <nav class="hugo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     
-    <a href="/post/select_chart/" class="hugo-nav__button">
+    <a href="/post/omnibus_gitlab/" class="hugo-nav__button">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-back"></i>
         </button>
@@ -132,7 +122,7 @@ exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
     </a>
     <div class="section-spacer"></div>
     
-    <a href="/post/gitlab_unicorn/" class="hugo-nav__button">Newer
+    <a href="/post/p_invoke_error/" class="hugo-nav__button">Newer
       <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
            <i class="icon ion-android-arrow-forward"></i>
       </button>
