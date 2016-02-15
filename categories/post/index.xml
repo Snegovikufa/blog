@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post on Rustam Safin (aka Snegovikufa) Site</title>
+    <link>http://snegovikufa.github.io/categories/post/</link>
+    <description>Recent content in Post on Rustam Safin (aka Snegovikufa) Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://snegovikufa.github.io/categories/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Youtube comment reload page fix (Chrome)</title>
+      <link>http://snegovikufa.github.io/post/youtube_fix/</link>
+      <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/youtube_fix/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Open this link chrome://net-internals/#hsts and add youtube.com domain into HSTS. This will force chrome to use HTTPS for youtube.com.&lt;/li&gt;
+&lt;li&gt;Reload your youtube pages.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/youtube.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Awesome Post</title>
+      <link>http://snegovikufa.github.io/post/lala/</link>
+      <pubDate>Wed, 19 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/post/lala/</guid>
+      <description>
+
+&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
+specimen book.  It has survived not only five centuries, but also the leap into
+electronic typesetting, remaining essentially unchanged. It was popularised in
+the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker
+including versions of Lorem Ipsum.&lt;/p&gt;
+
+&lt;h3 id=&#34;lorem-ipsum:3691010a2008368f15c25ce499de1def&#34;&gt;Lorem Ipsum&lt;/h3&gt;
+
+&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap into
+electronic typesetting, remaining essentially unchanged. It was popularised in
+the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker
+including versions of Lorem Ipsum.&lt;/p&gt;
+
+&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap into
+electronic typesetting, remaining essentially unchanged. It was popularised in
+the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker
+including versions of Lorem Ipsum.&lt;/p&gt;
+
+&lt;h3 id=&#34;lorem-ipsum-1:3691010a2008368f15c25ce499de1def&#34;&gt;Lorem Ipsum&lt;/h3&gt;
+
+&lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap into
+electronic typesetting, remaining essentially unchanged. It was popularised in
+the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker
+including versions of Lorem Ipsum.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Rustam Safin (aka Snegovikufa) Site</title>
+    <link>http://snegovikufa.github.io/project/</link>
+    <description>Recent content in Projects on Rustam Safin (aka Snegovikufa) Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://snegovikufa.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MiT Office: Modelling</title>
+      <link>http://snegovikufa.github.io/project/modelling/</link>
+      <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/project/modelling/</guid>
+      <description>
+
+&lt;p&gt;MiT Office Modelling is a software used to create and modify existing hydrodynamic models for
+&lt;a href=&#34;http://www2.emersonprocess.com/en-us/brands/roxar/reservoirmanagement/reservoirsimulation/pages/tempestmore.aspx&#34;&gt;Tempest MORE&lt;/a&gt;
+and &lt;a href=&#34;https://www.software.slb.com/products/eclipse&#34;&gt;Eclipse&lt;/a&gt; simulators.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-responsibilities:1a78f08b347c58aecd18d23e659bda2c&#34;&gt;My responsibilities&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Application development and support&lt;/li&gt;
+&lt;li&gt;Software requirements preparation&lt;/li&gt;
+&lt;li&gt;Worked with customers requirements&lt;/li&gt;
+&lt;li&gt;Continuous integration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;technology-stack-and-libraries-used:1a78f08b347c58aecd18d23e659bda2c&#34;&gt;Technology stack and libraries used&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Python 2.7&lt;/li&gt;
+&lt;li&gt;PyQt4&lt;/li&gt;
+&lt;li&gt;C modules&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://code.enthought.com/projects/&#34;&gt;Enthought Tool Suite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nose tests&lt;/li&gt;
+&lt;li&gt;Python-docx&lt;/li&gt;
+&lt;li&gt;xlrd and xlwt for Excel reports&lt;/li&gt;
+&lt;li&gt;Py2Exe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;screenshots:1a78f08b347c58aecd18d23e659bda2c&#34;&gt;Screenshots&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/ufsim-charts.png&#34; alt=&#34;&#34; /&gt;
+Main window with charts&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/ufsim-cube-editor.png&#34; alt=&#34;&#34; /&gt;
+Cube editor window&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/ufsim-profiles.png&#34; alt=&#34;&#34; /&gt;
+Well profile view window&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/ufsim-schedule-editor.png&#34; alt=&#34;&#34; /&gt;
+Schedule data editor window&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MiT Office: WAG</title>
+      <link>http://snegovikufa.github.io/project/rs_simulator/</link>
+      <pubDate>Sun, 10 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/project/rs_simulator/</guid>
+      <description>
+
+&lt;p&gt;When I worked in &amp;ldquo;MiT-Ufa&amp;rdquo; LLC one of our client asked to develop a special working tool for calculating levels of production and injection in the reservoirs with the full WAG.
+With customer&amp;rsquo;s engineers and our teammates we built a desktop C# application that simulates simplified reservoir and surface equipment behaviour. We used Windows Presentation Foundation to implement UI.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-responsibilities:257be3679dee36c9a6af94bddf9d11a4&#34;&gt;My responsibilities:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Software requirements preparation&lt;/li&gt;
+&lt;li&gt;Worked with customers requirements&lt;/li&gt;
+&lt;li&gt;Managed development team&lt;/li&gt;
+&lt;li&gt;Development and support&lt;/li&gt;
+&lt;li&gt;Continuous integration&lt;/li&gt;
+&lt;li&gt;Reports preparation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;technology-stack-used:257be3679dee36c9a6af94bddf9d11a4&#34;&gt;Technology stack used&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C#&lt;/li&gt;
+&lt;li&gt;WPF&lt;/li&gt;
+&lt;li&gt;LINQ&lt;/li&gt;
+&lt;li&gt;XML&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;screenshots:257be3679dee36c9a6af94bddf9d11a4&#34;&gt;Screenshots&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/rs_sim_main.jpg&#34; alt=&#34;&#34; /&gt;
+Main window&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/adaptation_sim.png&#34; alt=&#34;&#34; /&gt;
+Adaptation window where user define known values from real reservoir&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MiT Office: Wells</title>
+      <link>http://snegovikufa.github.io/project/wells/</link>
+      <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/project/wells/</guid>
+      <description>
+
+&lt;p&gt;This project involved developing a C# desktop application for wellhead equipment optimization.
+The client needed a highly customizable tool for optimizing well head equipment with advanced analytics and reporting capabilities.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-responsibilities:d8274c7e831af928d67049560efbc53b&#34;&gt;My responsibilities&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Advising the client on selecting which technology stack to be used&lt;/li&gt;
+&lt;li&gt;Coding the UI by receiving feedback and guidance from the clients engineers&lt;/li&gt;
+&lt;li&gt;Application development and support&lt;/li&gt;
+&lt;li&gt;Software requirements preparation&lt;/li&gt;
+&lt;li&gt;Worked with customers requirements&lt;/li&gt;
+&lt;li&gt;Continuous integration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;technology-stack-used:d8274c7e831af928d67049560efbc53b&#34;&gt;Technology stack used&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C#&lt;/li&gt;
+&lt;li&gt;WPF&lt;/li&gt;
+&lt;li&gt;XML&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;screenshots:d8274c7e831af928d67049560efbc53b&#34;&gt;Screenshots&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/wells_results.jpg&#34; alt=&#34;Optimization results window. The most useful method are highlighted&#34; /&gt;
+Optimization results window. The most useful method are highlighted&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/wells_results_2.png&#34; alt=&#34;Optimization results charts.&#34; /&gt;
+Optimization results charts.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Connector</title>
+      <link>http://snegovikufa.github.io/project/connector/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/project/connector/</guid>
+      <description>
+
+&lt;p&gt;Connector is a web tool for remote connections management.
+It shows you information about client and client&amp;rsquo;s devices.&lt;/p&gt;
+
+&lt;p&gt;The main feature is that Connector allows you to connect to remote clients&amp;rsquo; devices
+via remote tools like radmin, Windows RDP without filling password fields.&lt;/p&gt;
+
+&lt;p&gt;Connector uses Protocol handler and desktop client that receives incoming requests.
+When user clicks &amp;ldquo;Connect&amp;rdquo;, desktop client watches for unique windows for Radmin/WinBox/&amp;hellip;/
+and automatically fills required fields such as username and passwords.
+If user&amp;rsquo;s computer is fast enough Connector user don&amp;rsquo;t see any &amp;ldquo;Fill password&amp;rdquo; windows.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-responsibilities:39e0fe225f1cbdaa82ecadbe5a578373&#34;&gt;My responsibilities:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Advised the client which technology stack to be used&lt;/li&gt;
+&lt;li&gt;Developed the entire backend and frontend&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;technology-stack-used:39e0fe225f1cbdaa82ecadbe5a578373&#34;&gt;Technology stack used&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C#&lt;/li&gt;
+&lt;li&gt;ASP.NET MVC&lt;/li&gt;
+&lt;li&gt;Telerik Kendo UI&lt;/li&gt;
+&lt;li&gt;Bootstrap&lt;/li&gt;
+&lt;li&gt;LINQ&lt;/li&gt;
+&lt;li&gt;XML&lt;/li&gt;
+&lt;li&gt;jsPlumb&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;screenshots:39e0fe225f1cbdaa82ecadbe5a578373&#34;&gt;Screenshots&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/connector_main.png&#34; alt=&#34;&#34; /&gt;
+Main app view with client devices and Zabbix logs&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/connector_map.png&#34; alt=&#34;&#34; /&gt;
+Devices map&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TeamWords</title>
+      <link>http://snegovikufa.github.io/project/teamwords/</link>
+      <pubDate>Thu, 26 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/project/teamwords/</guid>
+      <description>
+
+&lt;p&gt;TeamWords is a free cross-platform desktop Slack client with native notifications.&lt;/p&gt;
+
+&lt;p&gt;TeamWords was created when Slack had not released official native client.
+Web-version has only short time notifications (&amp;lt; 10 seconds).
+If you miss notification, you will not notice that someone had written you a message.&lt;/p&gt;
+
+&lt;h3 id=&#34;technology-stack-used:fa7e4038b21a85b6214d03004b8e3708&#34;&gt;Technology stack used&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Qt5 (Widgets + Webkit)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;screenshots:fa7e4038b21a85b6214d03004b8e3708&#34;&gt;Screenshots&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/teamwords_main.png&#34; alt=&#34;&#34; /&gt;
+Main app view&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://snegovikufa.github.io/images/teamwords_notification.jpg&#34; alt=&#34;&#34; /&gt;
+Notification example&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

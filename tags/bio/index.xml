@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bio on Rustam Safin (aka Snegovikufa) Site</title>
+    <link>http://snegovikufa.github.io/tags/bio/</link>
+    <description>Recent content in Bio on Rustam Safin (aka Snegovikufa) Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Aug 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://snegovikufa.github.io/tags/bio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About Me</title>
+      <link>http://snegovikufa.github.io/about/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://snegovikufa.github.io/about/</guid>
+      <description>
+
+&lt;h4 id=&#34;places-i-ve-worked:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;Places I&amp;rsquo;ve worked&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sep 2010- june 2013  Python developer at &amp;ldquo;MiT - Ufa&amp;rdquo; LLC&lt;/li&gt;
+&lt;li&gt;june 2013 - dec 2013 C# developer at &amp;ldquo;K-Soft SPB&amp;rdquo; LLC&lt;/li&gt;
+&lt;li&gt;jan 2014 - dec 2015  Team Lead, C# developer at &amp;ldquo;MiT - Ufa&amp;rdquo; LLC&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
