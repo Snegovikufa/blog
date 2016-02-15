@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="My thoughts and rambles">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Https</title>
+        <title>How to set Omnibus Gitlab Sidekiq workers count</title>
         
         <meta name="mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
@@ -28,12 +28,14 @@
         <link rel="stylesheet" href="/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/css/material.grey-orange.min.css"/>
         <link rel="stylesheet" href="/css/styles.css"/>
-        
+          <link rel="stylesheet" href="/css/prism.css" />  
 </head>
 
 <body>
      
-        <div class="hugo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+         
+            <div class="hugo-blog hugo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">  
+        
     
         
         
@@ -63,46 +65,76 @@
     </div>
     
     <main class="mdl-layout__content">
-    
-    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
-        <div class="mdl-layout__header-row">
-            
-            
-            
-            <div class="mdl-layout-spacer"></div>
-            
-            <nav class="mdl-navigation">
-                <a class='mdl-navigation__link ' href="/">Home</a>
-                <a class='mdl-navigation__link ' href="/post">Articles</a>
-                <a class='mdl-navigation__link ' href="/project">Projects</a>
-                <a class='mdl-navigation__link ' href="/about">About</a>
-            </nav>
-        </div>
-    </header>
-    <div class="mdl-layout__drawer">
+
+<div class="hugo-blog__posts mdl-grid">
+    <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
         
-        <nav class="mdl-navigation">
-            <a class='mdl-navigation__link ' href="/">Home</a>
-            <a class='mdl-navigation__link ' href="/post">Articles</a>
-            <a class='mdl-navigation__link ' href="/project">Projects</a>
-            <a class='mdl-navigation__link ' href="/about">About</a>
-        </nav>
+        <div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('/images/default.jpg'); background-color:#4CAF50;">
+            <h3 >How To Set Omnibus Gitlab Sidekiq Workers Count</h3>
+        </div>
+          
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+            <div class="minilogo" style="background-image: url('/images/avatar.jpg');"></div>
+            <div>
+                <strong>Rustam Safin</strong>
+                <span>Feb 18, 2015</span>
+            </div>
+            
+            <div class="section-spacer"></div>
+            
+        </div>
+            
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+            <p>Stop your gitlab instance</p>
+
+<pre><code>sudo gitlab-ctl stop
+</code></pre>
+
+<p>Edit file <code>/opt/gitlab/sv/sidekiq/run</code></p>
+
+<p>Set your workers count:</p>
+
+<pre><code>#!/bin/sh
+cd /var/opt/gitlab/gitlab-rails/working
+exec 2&gt;&amp;1
+exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \
+  -U git -u git \
+  /opt/gitlab/embedded/bin/bundle exec sidekiq \
+    # ADD THE LINE BELOW AND SET NUMBER OF WORKERS
+    -c 3 \  # &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SET NUMBER OF WORKERS HERE
+    -q post_receive \
+    -q mailer \
+    -q system_hook \
+    -q project_web_hook \
+    -q gitlab_shell \
+    -q common \
+    -q default \
+    -e production \
+    -r /opt/gitlab/embedded/service/gitlab-rails \
+    -t 4
+</code></pre>
+
+        </div>
+        
+        <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments"> 
+            <a href=http://snegovikufa.github.io/>Rustam Safin</a>
+            <p>C# and Python developer</p>
+        </div>  
     </div>
 
-<h3>Generic List Heading</h3>
+    <nav class="hugo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    
+    <div class="section-spacer"></div>
+    
+    <a href="/post/lala/" class="hugo-nav__button">Newer
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+           <i class="icon ion-android-arrow-forward"></i>
+      </button>
+    </a>
+</nav> 
 
 
-
-<div class="section">
-    <h5><a class="black-text" href="http://snegovikufa.github.io/post/youtube_fix/">Youtube comment reload page fix (Chrome)</a></h5> 
-    <b><a class="black-text" href="http://snegovikufa.github.io/">Rustam Safin</a></b>
-    <br>Mon, Nov 9, 2015
-
-    <a href="http://snegovikufa.github.io/post/youtube_fix/" class="grey-text text-darken-3 waves-effect waves-light btn-flat"><span>Read More</span></a>
 </div>
-<div class="divider"></div>
-
-
 
             <footer class="mdl-mini-footer">
                 <div class="mdl-mini-footer--left-section">
@@ -129,42 +161,7 @@
     <script src="/js/material.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+     <script src="/js/prism.js"></script>
     
-     <script>
-    Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
-        var link = el.querySelector('a');
-        if (!link) {
-            return;
-        }
-        var target = link.getAttribute('href');
-        if (!target) {
-            return;
-        }
-        el.addEventListener('click', function() {
-            location.href = target;
-        });
-    });
-</script> <script>
-    (function () {
-    var VISIBLE_CLASS = "is-showing-options",
-        fab_btn  = document.getElementById("fab_btn"),
-        fab_ctn  = document.getElementById("fab_ctn"),
-        showOpts = function(e) {
-          var processClick = function (evt) {
-            if (e !== evt) {
-              fab_ctn.classList.remove(VISIBLE_CLASS);
-              fab_ctn.IS_SHOWING = false;
-              document.removeEventListener("click", processClick);
-            }
-          };
-          if (!fab_ctn.IS_SHOWING) {
-            fab_ctn.IS_SHOWING = true;
-            fab_ctn.classList.add(VISIBLE_CLASS);
-            document.addEventListener("click", processClick);
-          }
-        };
-    fab_btn.addEventListener("click", showOpts);
-    }.call(this));
-</script>
 </body>
 </html>

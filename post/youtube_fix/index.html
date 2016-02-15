@@ -24,6 +24,7 @@
         <meta name="msapplication-TileColor" content="#3372DF">
     
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
         <link rel="stylesheet" href="/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/css/material.grey-orange.min.css"/>
         <link rel="stylesheet" href="/css/styles.css"/>
@@ -85,7 +86,7 @@
             
         <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
             <ol>
-<li>Open this link chrome://net-internals/#hsts and add youtube.com domain into HSTS. This will force chrome to use HTTPS for youtube.com.</li>
+<li>Open this link <a href="chrome://net-internals/#hsts">chrome://net-internals/#hsts</a> and add <code>youtube.com</code> domain into HSTS. This will force chrome to use HTTPS for youtube.com.</li>
 <li>Reload your youtube pages.</li>
 </ol>
 
@@ -137,6 +138,8 @@
         <div class="mdl-layout__obfuscator"></div>
     </div>
     <script src="/js/material.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
      <script src="/js/prism.js"></script>
     
 </body>

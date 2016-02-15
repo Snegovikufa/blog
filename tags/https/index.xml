@@ -16,7 +16,7 @@
       
       <guid>http://snegovikufa.github.io/post/youtube_fix/</guid>
       <description>&lt;ol&gt;
-&lt;li&gt;Open this link chrome://net-internals/#hsts and add youtube.com domain into HSTS. This will force chrome to use HTTPS for youtube.com.&lt;/li&gt;
+&lt;li&gt;Open this link &lt;a href=&#34;chrome://net-internals/#hsts&#34;&gt;chrome://net-internals/#hsts&lt;/a&gt; and add &lt;code&gt;youtube.com&lt;/code&gt; domain into HSTS. This will force chrome to use HTTPS for youtube.com.&lt;/li&gt;
 &lt;li&gt;Reload your youtube pages.&lt;/li&gt;
 &lt;/ol&gt;
 

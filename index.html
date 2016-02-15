@@ -24,6 +24,7 @@
         <meta name="msapplication-TileColor" content="#3372DF">
     
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
         <link rel="stylesheet" href="/css/ionicons.min.css"/>
         <link rel="stylesheet" href="/css/material.grey-orange.min.css"/>
         <link rel="stylesheet" href="/css/styles.css"/>
@@ -171,6 +172,33 @@ specimen book.</p>
 
 </div>
      
+ 
+    
+        
+<div class="mdl-card mdl-cell mdl-cell--12-col">
+
+    
+    <div class="mdl-card__media mdl-color-text--grey-50" style=" background-color:#4CAF50;">
+        <h3><a href="/post/omnibus_gitlab/" >How To Set Omnibus Gitlab Sidekiq Workers Count</a></h3>
+    </div>
+
+    
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+        Stop your gitlab instance sudo gitlab-ctl stop Edit file /opt/gitlab/sv/sidekiq/run Set your workers count: #!/bin/sh cd /var/opt/gitlab/gitlab-rails/working exec 2&gt;&amp;1 exec chpst -e /opt/gitlab/etc/gitlab-rails/env -P \ -U git -u git \ /opt/gitlab/embedded/bin/bundle exec sidekiq \ # ADD THE LINE BELOW AND SET NUMBER OF WORKERS -c 3 \ # &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SET NUMBER OF WORKERS HERE -q post_receive \ -q mailer \ -q system_hook \ -q project_web_hook \ -q gitlab_shell \ -q
+    </div>
+
+    
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+        
+        <div class="minilogo" style="background-image: url('/images/avatar.jpg');"></div>
+        <div>
+            <strong><a href="http://snegovikufa.github.io/">Rustam Safin</a></strong>
+            <span>Feb 18, 2015</span>
+        </div>
+    </div>
+
+</div>
+     
 
     
     
@@ -210,6 +238,8 @@ specimen book.</p>
         <div class="mdl-layout__obfuscator"></div>
     </div>
     <script src="/js/material.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     
      <script>
     Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
